@@ -1,25 +1,32 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
-
-class SelectedBeast extends React.Component {
+import Button from 'react-bootstrap/Button'
+class Selected extends React.Component {
     render() {
         return (
-            <Modal show={this.props.show} dontShowCard={this.props.dontShowCard}>
-                <Modal.Header closeButton onClick={this.props.dontShowCard}>
-                    <Modal.Title>{this.props.obj.title}</Modal.Title>
+            <Modal show={this.props.show} onHide={this.props.closing}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{this.props.title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Card>
-                        <Card.Img variant="top" src={this.props.obj.image_url} alt={this.props.obj.title} title={this.props.obj.title} />
+                    <Card bg='dark' text='light'>
+                        <Card.Img variant="top" src={this.props.image_url} alt={this.props.title} title={this.props.title} />
                     </Card>
                     <Card.Body>
-                        <Card.Text>{this.props.obj.description}</Card.Text>
+                        <Card.Title>{this.props.title}</Card.Title>
+                        <Card.Text>{this.props.description}</Card.Text>
                     </Card.Body>
                 </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={this.props.closing}>
+                        Close
+          </Button>
+
+                </Modal.Footer>
             </Modal>
         );
     }
 
 }
-export default SelectedBeast;
+export default Selected;

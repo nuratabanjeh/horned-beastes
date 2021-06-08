@@ -2,13 +2,19 @@ import React from "react";
 import HornedBeasts from './HornedBeasts';
 import DataRow from '../data.json';
 import Row from 'react-bootstrap/Row';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
 class Main extends React.Component {
 
 
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         elementData: this.props.data
+    //     };
+    // }
     render() {
 
 

@@ -2,8 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import Selected from "./Selected";
 
-class HornedBeast extends React.Component {
+class HornedBeasts extends React.Component {
 
     constructor(props) {
         console.log("🚀 ~ file: HornedBeasts.js ~ line 11 ~ HornedBeast ~ constructor ~ props", props)
@@ -11,13 +12,23 @@ class HornedBeast extends React.Component {
         this.state = {
 
             likes: 0,
+            show: false,
         };
     }
 
     favorite = () => {
         this.setState({ likes: this.state.likes + 1 });
+        this.showing();
     };
 
+    showing = () => {
+        this.setState({ show: true })
+
+    }
+    closing = () => {
+        this.setState({ show: false })
+
+    }
     render() {
         return (
 
@@ -26,7 +37,7 @@ class HornedBeast extends React.Component {
                 <Col >
                     <Card style={
                         { width: '20rem' }
-                    } >
+                    } bg='dark' text='light'>
                         <Card.Img variant="top"
 
                             onClick={this.favorite}
@@ -47,6 +58,7 @@ class HornedBeast extends React.Component {
              < /Card.Body > 
              </Card>
                                 < /Col >
+                                <Selected show={this.state.show} closing={this.closing} title={this.props.title} image_url={this.props.image_url} description={this.props.description} />
 
             </div>
         )
@@ -54,4 +66,4 @@ class HornedBeast extends React.Component {
 
 }
 
-export default HornedBeast;
+export default HornedBeasts;
