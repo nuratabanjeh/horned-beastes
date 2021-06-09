@@ -8,27 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     element: DataRow,
-  //     show: false,
-  //     obj: {}
-  //   };
-  // }
 
-  // HornedCardShowing = (event) => {
-  //   this.setState({
-  //     show: true,
-  //     obj: event
-  //   });
-  //   console.log(event);
-  // }
-  // dontShowCard = () => {
-  //   this.setState({
-  //     show: false,
-  //   });
-  // }
   render() {
     return (
       <div>
